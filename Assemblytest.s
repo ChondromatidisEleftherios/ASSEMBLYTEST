@@ -1,6 +1,6 @@
 .data
 		value: .word 0, 0, 0
-		msg1:  .asciiz "Sum = "
+		mes:  .asciiz "Sum is "
 
 	.text		# Μέρος text προγράμματος
 	.globl main # Κύριο πρόγραμμα
@@ -32,7 +32,7 @@ main:
 # Εμφάνιση αποτελέσματος:
 
    li $v0, 4   # Άμεση φόρτωση στο καταχωρητή $v0 την τιμή 4 (syscall για print_string)
-   la $a0, msg1  # Φόρτωση της διέυθυνσης του msg1 στο καταχωρητή $a0 (argument to print_string call)
+   la $a0, mes  # Φόρτωση της διέυθυνσης του msg1 στο καταχωρητή $a0 (argument to print_string call)
    syscall  # Κλήση syscall
 
 # Μέχρι εδώ έχουμε εμφανίσει το μήνυμα Sum=
